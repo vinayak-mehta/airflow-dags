@@ -25,7 +25,7 @@ from airflow.operators.dummy_operator import DummyOperator
 
 
 START_DATE = datetime.strptime('2019-02-15T08:20:00', '%Y-%m-%dT%H:%M:%S')
-DAG_NAME = 'test_dag_v1'
+DAG_NAME = 'test_clone_v1'
 
 default_args = {
     'owner': 'airflow',
