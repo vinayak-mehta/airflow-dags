@@ -36,3 +36,5 @@ dag = DAG(DAG_NAME, schedule_interval='*/5 * * * *', default_args=default_args)
 run_this_1 = DummyOperator(task_id='run_this_1', dag=dag)
 run_this_2 = DummyOperator(task_id='run_this_2', dag=dag)
 run_this_3 = DummyOperator(task_id='run_this_3', dag=dag)
+
+run_this_1 >> run_this_2 >> run_this_3
