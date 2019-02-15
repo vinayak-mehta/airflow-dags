@@ -24,14 +24,14 @@ from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 
 
-START_DATE = datetime.strptime('2019-02-15T12:00:00', '%Y-%m-%dT%H:%M:%S')
+START_DATE = datetime.strptime('2019-02-15T12:50:00', '%Y-%m-%dT%H:%M:%S')
 DAG_NAME = 'test_clone_v1'
 
 default_args = {
     'owner': 'airflow',
     'start_date': START_DATE
 }
-dag = DAG(DAG_NAME, schedule_interval='*/5 * * * *', default_args=default_args)
+dag = DAG(DAG_NAME, schedule_interval='0 * * * *', default_args=default_args)
 
 run_this_1 = DummyOperator(task_id='run_this_1', dag=dag)
 run_this_2 = DummyOperator(task_id='run_this_2', dag=dag)
